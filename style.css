@@ -152,12 +152,17 @@ header {
     font-size: 0.9em;
   }
 }
+.text-title{
+  text-align:center;
+  padding: 10px;
+  font-size: .9em;
+}
+
 #typing-text::after {
   background-color: rgba(0, 0, 0, 0.813);
-  font-size: 1, 6em;
   content: "|";
   animation: blink 1s step-end infinite;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 @keyframes blink {
@@ -385,6 +390,22 @@ header {
   padding: 30px 15px;
 }
 
+
+/* Animações scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+
 @media (min-width: 768px) {
   .sobre-container {
     flex-direction: row;
@@ -402,16 +423,9 @@ header {
   .image-with-offset-border {
     margin: 0 30px 0 0;
   }
-}
 
-/* Animações scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
+  .text-title{
+    margin-bottom: 30px;
+    font-size:1.2em;
+  }
 }
