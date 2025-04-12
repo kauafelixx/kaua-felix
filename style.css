@@ -436,12 +436,13 @@ header {
 .projetos {
   padding: 60px 20px;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.85);
+  
 
 
 }
 
 .projetos h2 {
+  background-color:var(--black-claro);
 text-shadow: 0px 0px 15px var(--color2);
 text-decoration: underline var(--color5) 2px;
 font-size:2rem;
@@ -457,21 +458,12 @@ font-size:2rem;
 }
 
 
-@keyframes gradientAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
 
+ 
 .carrossel {
   position: relative;
   overflow: hidden;
+  padding: 20px;
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -492,11 +484,65 @@ font-size:2rem;
 .slide img {
   width: 100%;
   border-radius: 10px;
+  filter:drop-shadow(0px 0px 7px var(--color3));
 }
 
 .info {
-  text-align: center;
-  margin-top: 10px;
+  text-align: justify;
+  margin-top: 20px;
+  font-size: 0.9rem;
+  background-color:var(--black-claro);
+  padding:20px;
+
+  p{
+    margin-bottom: 10px;
+  }
+  a{
+
+
+
+    background: linear-gradient(270deg, #ffffff, var(--color2), var(--color4), var(--color1));
+    background-size: 800% 800%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 6s ease infinite;
+transition: all 0.3s ease;
+
+&:hover, &:active{
+  text-decoration: underline var(--color2) 2px;
+  font-size:1.1em;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 2px;
+}
+  }
+  
+  h3 {
+
+    background: linear-gradient(
+      270deg,
+      #00000000,
+      #ffffff,
+      #0070a8,
+      #7db9e8,
+      #00000000
+    );
+    background-size: 600% 600%;
+  margin-bottom:10px;
+    padding: 12px 20px;
+    color: white;
+    border-radius: 8px;
+    font-weight: bold;
+    text-align: center;
+ 
+    transition: transform 0.3s ease;
+  }
+  
+  /* Animação do gradiente */
+  
+  
+  
+  
 }
 
 .btn {
@@ -505,34 +551,50 @@ font-size:2rem;
   transform: translateY(-50%);
   font-size: 2rem;
   background: rgba(0, 0, 0, 0.4);
-  color: white;
+  color: var(--color4);
+text-shadow: 0px 0px 5px var(--color2);
   border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 2;
   border-radius: 50%;
+  transition: all .3s ease;
 }
 
 .prev {
-  left: 10px;
+  left: 15px;
 }
 
 .next {
-  right: 10px;
+  right: 15px;
 }
 
 .btn:hover {
   background: rgba(0, 0, 0, 0.6);
+  text-shadow:0px 0px 10px var(--color2);
 }
 
 @media (min-width: 768px){
   .projetos h2 {
     font-size: 3rem;
   }
+  .info{
+    font-size:1rem;
+ 
+  }
 }
 
-
-
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 
 
 
