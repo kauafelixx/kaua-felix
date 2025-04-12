@@ -391,17 +391,7 @@ header {
 }
 
 
-/* Animações scroll reveal */
-.reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
 
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
 
 
 
@@ -412,6 +402,8 @@ header {
     max-width: 1000px;
     margin: auto;
     align-items: flex-start;
+
+
   }
 
   .about {
@@ -438,81 +430,141 @@ header {
 
 
 
+
+
+
 .projetos {
   padding: 60px 20px;
   text-align: center;
   background-color: rgba(0, 0, 0, 0.85);
+
+
 }
 
 .projetos h2 {
-  font-size: 2em;
-  margin-bottom: 30px;
-  color: var(--color2);
+text-shadow: 0px 0px 15px var(--color2);
+text-decoration: underline var(--color5) 2px;
+font-size:2rem;
+  font-weight: bold;
+  background: linear-gradient(270deg, #ffffff, var(--color3), var(--color6), var(--color2));
+  background-size: 800% 800%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientAnimation 6s ease infinite;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 5px;
+}
+
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .carrossel {
-  max-width: 800px;
-  margin: 0 auto;
-  overflow: hidden;
   position: relative;
-  border-radius: 12px;
+  overflow: hidden;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .carrossel-inner {
   display: flex;
-  transition: transform 0.6s ease-in-out;
-  will-change: transform;
+  transition: transform 0.5s ease-in-out;
+  touch-action: pan-y;
 }
 
 .slide {
   min-width: 100%;
   box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .slide img {
   width: 100%;
-  max-width: 600px;
-  border-radius: 12px;
-  box-shadow: 0 0 10px rgba(255,255,255,0.2);
-}
-
-.slide .info {
-  background-color: rgba(255, 255, 255, 0.05);
-  padding: 20px;
   border-radius: 10px;
-  backdrop-filter: blur(5px);
-  max-width: 600px;
 }
 
-.slide .info h3 {
-  color: var(--color4);
-  font-size: 1.4em;
-}
-
-.slide .info a {
+.info {
+  text-align: center;
   margin-top: 10px;
-  display: inline-block;
-  color: var(--color1);
-  text-decoration: none;
-  font-weight: bold;
 }
 
-@media (min-width: 768px) {
-  .slide {
-    flex-direction: row;
-    justify-content: space-around;
-  }
+.btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  background: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 2;
+  border-radius: 50%;
+}
 
-  .slide img {
-    max-width: 350px;
-  }
+.prev {
+  left: 10px;
+}
 
-  .slide .info {
-    text-align: left;
+.next {
+  right: 10px;
+}
+
+.btn:hover {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+@media (min-width: 768px){
+  .projetos h2 {
+    font-size: 3rem;
   }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Animações scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
