@@ -110,3 +110,46 @@ window.addEventListener("load", revealOnScroll);
     }
   });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+  const form = document.getElementById("form");
+  const statusMsg = document.getElementById("statusMsg");
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const url = form.action;
+
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        body: formData,
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        statusMsg.textContent = "Mensagem enviada com sucesso!";
+        form.reset();
+      } else {
+        statusMsg.textContent = "Erro ao enviar. Tente novamente.";
+        statusMsg.style.color = "red";
+      }
+    } catch (error) {
+      statusMsg.textContent = "Erro de conexão. Tente novamente.";
+      statusMsg.style.color = "red";
+    }
+  });
