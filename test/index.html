@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contato</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f7f7f7;
+      color: #333;
+    }
+
+    section.contato {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .contato h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: #111;
+    }
+
+    .contato-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .formulario, .redes {
+      flex: 1 1 300px;
+    }
+
+    .formulario form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .formulario input, .formulario textarea {
+      padding: 15px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: 0.3s;
+    }
+
+    .formulario input:focus, .formulario textarea:focus {
+      border-color: #0f62fe;
+      outline: none;
+    }
+
+    .formulario button {
+      padding: 15px;
+      background-color: #0f62fe;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .formulario button:hover {
+      background-color: #0041c4;
+    }
+
+    .redes {
+      text-align: center;
+    }
+
+    .redes p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+
+    .redes a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 2rem;
+      color: #0f62fe;
+      transition: 0.3s;
+    }
+
+    .redes a:hover {
+      color: #0041c4;
+      transform: scale(1.1);
+    }
+
+    @media (max-width: 768px) {
+      .contato-container {
+        flex-direction: column;
+      }
+
+      .formulario, .redes {
+        text-align: center;
+      }
+    }
+  </style>
+
+  <!-- Ícones (usando remixicon) -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <section class="contato" id="contato">
+    <h2>Entre em Contato</h2>
+    <div class="contato-container">
+      <div class="formulario">
+        <form>
+          <input type="text" placeholder="Seu nome" required />
+          <input type="email" placeholder="Seu e-mail" required />
+          <textarea rows="5" placeholder="Sua mensagem" required></textarea>
+          <button type="submit">Enviar Mensagem</button>
+        </form>
+      </div>
+      <div class="redes">
+        <p>Ou me chama nas redes:</p>
+        <a href="https://github.com/kauafelixx" target="_blank"><i class="ri-github-fill"></i></a>
+        <a href="https://www.linkedin.com/in/seulink" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
+        <a href="https://www.instagram.com/seuinsta" target="_blank"><i class="ri-instagram-line"></i></a>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
