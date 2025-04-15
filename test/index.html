@@ -3,8 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contato</title>
+  <title>Portfólio - Modo Claro/Escuro</title>
   <style>
+    /* RESET */
     * {
       margin: 0;
       padding: 0;
@@ -12,127 +13,104 @@
     }
 
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: #f7f7f7;
-      color: #333;
-    }
-
-    section.contato {
-      padding: 60px 20px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    .contato h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-size: 2.5rem;
-      color: #111;
-    }
-
-    .contato-container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: center;
-      align-items: flex-start;
-    }
-
-    .formulario, .redes {
-      flex: 1 1 300px;
-    }
-
-    .formulario form {
+      font-family: 'Arial', sans-serif;
+      background-color: var(--background);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
     }
 
-    .formulario input, .formulario textarea {
-      padding: 15px;
-      border: 2px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: 0.3s;
+    /* Tema CLARO */
+    body.light-mode {
+      --background: #f5faff;
+      --text-color: #023047;
+      --card-bg: #ffffff;
+      --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     }
 
-    .formulario input:focus, .formulario textarea:focus {
-      border-color: #0f62fe;
-      outline: none;
+    /* Tema ESCURO */
+    body.dark-mode {
+      --background: #0f172a;
+      --text-color: #e2e8f0;
+      --card-bg: #1e293b;
+      --card-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
     }
 
-    .formulario button {
-      padding: 15px;
-      background-color: #0f62fe;
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .formulario button:hover {
-      background-color: #0041c4;
-    }
-
-    .redes {
+    .container {
+      background-color: var(--card-bg);
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: var(--card-shadow);
       text-align: center;
+      width: 100%;
+      max-width: 500px;
     }
 
-    .redes p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
+    .toggle-btn {
+      position: fixed;
+      top: 1rem;
+      right: 1rem;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      border: none;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      box-shadow: var(--card-shadow);
+      cursor: pointer;
+      transition: all 0.3s ease;
     }
 
-    .redes a {
-      margin: 0 10px;
-      text-decoration: none;
-      font-size: 2rem;
-      color: #0f62fe;
-      transition: 0.3s;
+    .toggle-btn:hover {
+      transform: scale(1.05);
     }
 
-    .redes a:hover {
-      color: #0041c4;
-      transform: scale(1.1);
+    h1 {
+      margin-bottom: 1rem;
     }
 
-    @media (max-width: 768px) {
-      .contato-container {
-        flex-direction: column;
-      }
-
-      .formulario, .redes {
-        text-align: center;
-      }
+    p {
+      line-height: 1.6;
     }
   </style>
-
-  <!-- Ícones (usando remixicon) -->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 <body>
 
-  <section class="contato" id="contato">
-    <h2>Entre em Contato</h2>
-    <div class="contato-container">
-      <div class="formulario">
-        <form>
-          <input type="text" placeholder="Seu nome" required />
-          <input type="email" placeholder="Seu e-mail" required />
-          <textarea rows="5" placeholder="Sua mensagem" required></textarea>
-          <button type="submit">Enviar Mensagem</button>
-        </form>
-      </div>
-      <div class="redes">
-        <p>Ou me chama nas redes:</p>
-        <a href="https://github.com/kauafelixx" target="_blank"><i class="ri-github-fill"></i></a>
-        <a href="https://www.linkedin.com/in/seulink" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-        <a href="https://www.instagram.com/seuinsta" target="_blank"><i class="ri-instagram-line"></i></a>
-      </div>
-    </div>
-  </section>
+  <button class="toggle-btn" id="toggle-theme">🌞 / 🌙</button>
 
+  <div class="container">
+    <h1>Seja bem-vindo ao meu portfólio!</h1>
+    <p>Aqui você pode alternar entre modo claro e escuro com estilo.</p>
+  </div>
+
+  <script>
+    const toggleBtn = document.getElementById('toggle-theme');
+    const body = document.body;
+
+    // Verifica se há tema salvo
+    const savedTheme = localStorage.getItem('theme');
+
+    if (savedTheme) {
+      body.classList.add(savedTheme);
+    } else {
+      body.classList.add('dark-mode'); // padrão escuro
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      if (body.classList.contains('dark-mode')) {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
+        localStorage.setItem('theme', 'light-mode');
+      } else {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark-mode');
+      }
+    });
+  </script>
 </body>
 </html>

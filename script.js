@@ -111,18 +111,6 @@ window.addEventListener("load", revealOnScroll);
   });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   const form = document.getElementById("form");
   const statusMsg = document.getElementById("statusMsg");
 
@@ -151,5 +139,33 @@ window.addEventListener("load", revealOnScroll);
     } catch (error) {
       statusMsg.textContent = "Erro de conexão. Tente novamente.";
       statusMsg.style.color = "red";
+    }
+  });
+
+
+
+
+
+
+
+
+
+  const toggleBtn = document.getElementById("theme-toggle");
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light") {
+    document.body.classList.add("light-mode");
+    toggleBtn.textContent = "🌙";
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("light-mode");
+
+    if (document.body.classList.contains("light-mode")) {
+      localStorage.setItem("theme", "light");
+      toggleBtn.textContent = "🌙";
+    } else {
+      localStorage.setItem("theme", "dark");
+      toggleBtn.textContent = "🌞";
     }
   });
