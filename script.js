@@ -64,10 +64,6 @@ window.addEventListener("load", revealOnScroll);
 
 
 
-
-
-
-
   const carrosselInner = document.getElementById('carrosselInner');
   const slides = document.querySelectorAll('.slide');
   const totalSlides = slides.length;
@@ -141,13 +137,6 @@ window.addEventListener("load", revealOnScroll);
       statusMsg.style.color = "red";
     }
   });
-
-
-
-
-
-
-
 
 
   const toggleBtn = document.getElementById("theme-toggle");
