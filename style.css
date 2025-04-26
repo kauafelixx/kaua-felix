@@ -30,12 +30,14 @@ html{
 }
 
 header {
+
   width: 100vw;
   padding: 20px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+
 
   img {    
     width: 70px;
@@ -90,6 +92,7 @@ header {
   .link-animate:hover {
     color: var(--color5);
     font-size: 1em;
+   
   }
 
   .link-animate:hover::after {
@@ -121,6 +124,20 @@ header {
   position: relative;
   display: inline-block;
   margin: 20px;
+  animation: moveBorder 2s ease-in-out infinite;
+}
+
+@keyframes moveBorder {
+  0% {
+    transform: translate(0, 0);
+
+  }
+  50% {
+    transform: translate(5px, -5px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 .image-with-offset-border img {
@@ -346,12 +363,15 @@ text-align: center;
 }
 
 .icones-tecnicos {
+  width: 100%;
+  max-width: 600px;
+
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
-  margin-top: 10px;
-  animation: fadeIn 0.8s ease forwards,  dancaDoida 15s  infinite alternate;
+  margin: 10px auto;
+  animation: fadeIn 0.8s ease forwards,  dancaDoida 20s  infinite alternate, mudarForma 20s ease infinite alternate;
   animation-delay: 0.2s;
   opacity: 0;
   transform: translateY(20px);
@@ -359,28 +379,65 @@ text-align: center;
   background:linear-gradient(var(--color5), var(--color6), var(--color5));
    background-size: 400% 400%;
 padding:20px;
-   border-radius:10px ;
+
     box-shadow: 0px 0px 10px var(--color6);
 }
 
 @keyframes dancaDoida {
   0% {
-    transform: translateY(0) rotate(0deg) scale(1);
+    transform: scale(1);
+
   }
   20% {
-    transform: translateY(-3px) rotate(3deg) scale(1.1);
+    transform: scale(1.1);
+
   }
   40% {
-    transform: translateX(3px) rotate(-3deg) scale(0.9);
+    transform: scale(1);
   }
   60% {
-    transform: translateY(3px) rotate(-3deg) scale(1.2);
+    transform:  scale(1.1);
+  
   }
   80% {
-    transform: translateX(-4px) rotate(-3deg) scale(1);
+    transform: scale(1);
+
   }
   100% {
-    transform: translateY(0) rotate(0deg) scale(1);
+    transform:  scale(1.1);
+  }
+}
+
+@keyframes mudarForma{
+  0%{
+    border-radius: 100px 0px 100px 0px;
+    border-top: 2px double rgb(255, 255, 255);
+    border-bottom: 2px double rgb(255, 255, 255);
+  }
+  20%{
+    border-radius: 0px 100px 0px 100px;
+    border-left: 2px double rgb(255, 255, 255); 
+    border-right: 2px double rgb(255, 255, 255);
+  }
+  40%{
+    border-radius:100px 0px 100px 0px;
+    border-top: 2px double rgb(255, 255, 255);
+    border-bottom: 2px double rgb(255, 255, 255);
+  }
+  60%{
+    border-radius: 0px 100px 0px 100px;
+    border-left: 2px double rgb(255, 255, 255); 
+    border-right: 2px double rgb(255, 255, 255);
+  }
+  80%{
+    border-radius: 100px 0px 100px 0px;
+    border-top: 2px double rgb(255, 255, 255);
+    border-bottom: 2px double rgb(255, 255, 255);
+  }
+  100%{
+    border-radius: 0px 100px 0px 100px;
+    border-left: 2px double rgb(255, 255, 255); 
+    border-right: 2px double rgb(255, 255, 255);
   }
 }
 
@@ -600,6 +657,20 @@ background-color: var(--color7);
 
 .btn:hover {
   text-shadow: 0px 0px 10px var(--color2);
+}
+
+.tec{
+width: 100%;
+text-align: center;
+
+i{
+  font-size:1.5em;
+  margin: 5px;
+filter: contrast(2);
+  transition: all 0.3s ease;
+}
+
+
 }
 
 @media (min-width: 768px) {
