@@ -1,10 +1,14 @@
 @charset "UTF-8";
 
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&display=swap');
+
+
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
 }
+
 :root {
   --color1: #D9D9D9;
   --color2: #A6A6A6;
@@ -15,10 +19,13 @@
   --color7: #ffffffc0;
   --black-claro: rgba(0, 0, 0, 0.623);
 
+  --font1:"Cascadia Mono", sans-serif;
+
   --borda-animada: linear-gradient(120deg, white, var(--color6), white);
 }
 body {
-  font-family: Arial, Helvetica, sans-serif;
+
+  font-family: var(--font1);
   background-color: rgb(255, 255, 255);
   height: 100vh;
   overflow-x: hidden;
@@ -70,7 +77,7 @@ header {
     margin-right: 10px;
     padding: 0.5rem 0;
     transition: all 0.3s ease;
-    font-weight: 500;
+    font-weight: 300;
     outline: none;
   }
 
@@ -92,6 +99,7 @@ header {
   .link-animate:hover {
     color: var(--color5);
     font-size: 1em;
+    font-weight: bold;
    
   }
 
@@ -184,14 +192,14 @@ border-radius: 10px;
 .text-title {
   text-align: center;
   padding: 10px;
-  font-size: 0.9em;
+  font-size: 0.8em;
 }
 
 #typing-text::after {
   background-color: rgba(0, 0, 0, 0.699);
   content: "|";
   animation: blink 1s step-end infinite;
-  font-weight: normal;
+  font-weight: 300;
 }
 
 @keyframes blink {
@@ -224,7 +232,7 @@ background-color: #ffffffc0;
   margin: 10px auto;
 
   p {
-    font-weight: 500;
+    font-weight: 300;
     line-height: 1.6em;
     margin-bottom: 10px;
     text-align: justify;
@@ -365,13 +373,13 @@ text-align: center;
 .icones-tecnicos {
   width: 100%;
   max-width: 600px;
-
+border-radius: 10px;
   display: flex;
   justify-content: center;
   gap: 30px;
   flex-wrap: wrap;
   margin: 10px auto;
-  animation: fadeIn 0.8s ease forwards,  dancaDoida 20s  infinite alternate, mudarForma 20s ease infinite alternate;
+  animation: fadeIn 0.8s ease forwards, dancaDoida 20s  infinite alternate,  moveBorder 2s ease-in-out infinite;
   animation-delay: 0.2s;
   opacity: 0;
   transform: translateY(20px);
@@ -382,7 +390,7 @@ padding:20px;
 
     box-shadow: 0px 0px 10px var(--color6);
 }
-
+/*
 @keyframes dancaDoida {
   0% {
     transform: scale(1);
@@ -407,6 +415,7 @@ padding:20px;
     transform:  scale(1.1);
   }
 }
+
 
 @keyframes mudarForma{
   0%{
@@ -440,6 +449,9 @@ padding:20px;
     border-right: 2px double rgb(255, 255, 255);
   }
 }
+    */
+
+ 
 
 .icones-tecnicos>.skill{
   width: 60px;
@@ -534,9 +546,11 @@ li{
 }
 
 .projetos {  
-  padding: 60px 20px;
+  padding: 10px 10px;
   text-align: center;
   position: relative;
+background-color: var(--color5);
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.806);
 }
 
 .projetos h2 {
@@ -544,12 +558,12 @@ li{
   font-weight: 700;
   background: linear-gradient(
     135deg,
-    #878787,
-    #414141,
-    #1b1b1b,
-    #000000,
-    #626262,
-    #474747b8
+    #d4d4d4,
+    #cfcfcf,
+    #ffffff,
+    #b3b3b3,
+    #b7b7b7,
+    #d6d6d6b8
   );
   background-size: 400% 400%;
   -webkit-background-clip: text;
@@ -557,6 +571,7 @@ li{
   -webkit-text-fill-color: transparent;
   animation: gradientAnimation 6s ease infinite;
 text-align: center;
+
 }
 
 .carrossel {
@@ -583,27 +598,28 @@ text-align: center;
 .slide img {
   width: 80%;
   border-radius: 10px;
-  filter: drop-shadow(0px 0px 1px var(--color3));
+  filter: drop-shadow(0px 0px 1px var(--color1));
 }
 
 .info {
   text-align: justify;
   margin-top: 20px;
   font-size: 0.9rem;
-background-color: var(--color7);
+color: white;
   padding: 20px;
   
   p {
   line-height: 1.6em;
     margin-bottom: 20px;
+    font-weight: 300;
   }
 
   a {
-    text-decoration: underline var(--color4) 2px;
+    text-decoration: underline var(--color1) 2px;
     text-decoration-thickness: 5px;
    transition:all .5s ease;
     text-underline-offset: 5px;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 7px;
  
     &:hover,
@@ -615,17 +631,17 @@ background-color: var(--color7);
   h3 {
     background: linear-gradient(
       135deg,
-      #878787,
-      #414141,
-      #1b1b1b,
-      #000000,
-      #626262,
-      #474747b8
+      #e1e1e1,
+      #dcdcdc,
+      #afafaf,
+      #d3d3d3,
+      #c4c4c4,
+      #ffffffb8
     );
     background-size: 600% 600%;
     margin-bottom: 10px;
     padding: 12px 20px;
-    color: white;
+    color: rgb(0, 0, 0);
     border-radius: 8px;
     font-weight: bold;
     text-align: center;
@@ -638,13 +654,19 @@ background-color: var(--color7);
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  color: var(--color4);
+  color: white;
   border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 2;
   border-radius: 50%;
   transition: all 0.3s ease;
+  background-color: transparent;
+
+  &:hover, &:active{
+    text-shadow: 0px 0px 2px white;
+    font-size: 2.2rem;
+  }
 }
 
 .prev {

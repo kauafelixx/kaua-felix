@@ -1,5 +1,5 @@
 const textoCompleto =
-  "<strong>Kauã Felix</strong> | Desenvolvedor Front-End & Aspirante a Full Stack";
+  "<strong>Kauã Felix</strong> | Desenvolvedor Front-End & Desenvolvedor Web";
 const elemento = document.getElementById("typing-text");
 let i = 0;
 let dentroDeTag = false;
