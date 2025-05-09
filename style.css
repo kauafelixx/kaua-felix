@@ -73,12 +73,17 @@ header {
     position: relative;
     color: var(--color5);
     text-decoration: none;
-    font-size: 0.9em;
+    font-size: 0.7em;
     margin-right: 10px;
     padding: 0.5rem 0;
     transition: all 0.3s ease;
-    font-weight: 300;
+    font-weight: 400;
     outline: none;
+  }
+  @media (min-width: 768px) {
+    .link-animate{
+      font-size: 0.9em;
+    }
   }
 
   .link-animate:focus {
@@ -159,7 +164,10 @@ header {
  
 }
 
+
+
 .image-with-offset-border::before {
+transform: rotate(3deg);
 border-radius: 10px;
   content: "";
   position: absolute;
@@ -174,8 +182,11 @@ border-radius: 10px;
 
 .image-with-offset-border:hover::before,
 :active::before {
-  top: -4px;
-  left: -4px;
+  transform: rotate(0deg);
+border: solid 3px white;
+
+  top: 0px;
+  left: 0px;
   border-style: 1px solid ;
   border-color: var(--color3);
   box-shadow: 0px 0px 10px var(--color2);
@@ -225,14 +236,15 @@ border-radius: 10px;
 }
 
 .about {
+  border-left: 1px solid var(--color5);
 background-color: #ffffffc0;
   width: 440px;
-  padding: 20px;
-  font-size: 0.9em;
+padding: 0px 30px ;
+  font-size: 0.8em;
   margin: 10px auto;
 
   p {
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.6em;
     margin-bottom: 10px;
     text-align: justify;
