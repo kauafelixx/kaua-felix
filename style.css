@@ -877,6 +877,8 @@ header {
   animation: gradientAnimation 6s ease infinite;
   text-align: center;
   }
+
+
   .certifiicado-bloco {
     min-width: 400px;
 
@@ -884,4 +886,22 @@ header {
       width: 100%;
     }
   }
+
+  .lista-habilidades li::before {
+
+  background: linear-gradient(65deg, var(--color1), white);
+
+}
+}
+
+.certfi{
+max-width: 700px;
+padding: 30px;
+
+p{
+  margin-bottom: 5px;
+}
+ul{
+  margin-bottom: 15px;
+}
 }
